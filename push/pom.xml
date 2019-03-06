@@ -42,14 +42,27 @@
 		</dependency>
 	</dependencies>
 
-	<!-- Not required for library module -->
-	<!-- <build> -->
-	<!-- <plugins> -->
-	<!-- <plugin> -->
-	<!-- <groupId>org.springframework.boot</groupId> -->
-	<!-- <artifactId>spring-boot-maven-plugin</artifactId> -->
-	<!-- </plugin> -->
-	<!-- </plugins> -->
-	<!-- </build> -->
+	<!-- Not required because this plug-in will replace the original jar/war 
+		file with the repackaged one -->
+	<!-- https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/repackage-classifier.html -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>repackage</id>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>exec</classifier>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
