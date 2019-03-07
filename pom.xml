@@ -24,6 +24,7 @@
 	<modules>
 		<module>push</module>
 		<module>rest</module>
+		<module>client-app</module>
 	</modules>
 
 	<dependencies>
