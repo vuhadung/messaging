@@ -23,7 +23,6 @@ public class MessageController {
 	@ResponseBody
 	public ResponseEntity<HttpStatus> postMessage(@RequestBody Message msg) {
 		if (msg.getPayload() != null) {
-			System.out.println(msg.getPayload());
 			sender.send(msg.getPayload());
 			return ResponseEntity.ok(HttpStatus.OK);
 		}

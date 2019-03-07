@@ -13,7 +13,7 @@ public class Sender {
 	private KafkaTemplate<String, String> kafkaTemplate;
 
 	public void send(String payload) {
-		LOGGER.info("sending payload = {0}", payload);
+		LOGGER.info("sending payload = {}", payload);
 		kafkaTemplate.send("TCB", payload);
 	}
 
