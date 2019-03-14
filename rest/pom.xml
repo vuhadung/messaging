@@ -54,6 +54,33 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<!-- Export package vn.com.techcombank.model.* -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier>common</classifier>
+							<resources>
+								<resource>
+									<directory>${project.build.sourceDirectory}</directory>
+									<!-- TODO: Cannot exclude these folders?! -->
+									<excludes>
+										<exclude>**/rest/*.java</exclude>
+										<exclude>**/controller/*.java</exclude>
+									</excludes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

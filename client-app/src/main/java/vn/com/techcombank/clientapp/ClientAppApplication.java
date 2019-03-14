@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import vn.com.techcombank.consumer.Receiver;
+import vn.com.techcombank.model.Message;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
@@ -38,6 +39,9 @@ public class ClientAppApplication implements CommandLineRunner {
 //		}
 //		
 //		scanner.close();
+		
+		Message mes = new Message();
+		mes.setPayload("OK");
 	}
 
 }
